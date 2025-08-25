@@ -188,16 +188,45 @@
         
         <div style="margin-top: 30px; font-size: 0.9rem; color: #666;">
             <p>✅ Jouw gegevens zijn veilig opgeslagen conform AVG wetgeving</p>
-            <p>🎯 Audit ID: <code id="audit-id">LIA-$(date +%Y%m%d)-$(date +%H%M%S)</code></p>
+            <p>🎯 Audit ID: <code id="audit-id">Wordt geladen...</code></p>
+            <div id="submission-details" style="margin-top: 15px; display: none;">
+                <p><strong>Aangevraagd voor:</strong> <span id="lead-name"></span></p>
+                <p><strong>LinkedIn URL:</strong> <span id="linkedin-url"></span></p>
+            </div>
         </div>
     </div>
 
     <script>
-        // Optional: Add some interactivity
         document.addEventListener('DOMContentLoaded', function() {
-            // Generate unique audit ID
-            const auditId = 'LIA-' + new Date().toISOString().slice(0,10).replace(/-/g,'') + '-' + new Date().toTimeString().slice(0,5).replace(/:/g,'');
-            document.getElementById('audit-id').textContent = auditId;
+            // Get submission data from session storage
+            const submissionData = sessionStorage.getItem('leadSubmission');
+            
+            if (submissionData) {
+                try {
+                    const data = JSON.parse(submissionData);
+                    
+                    // Show actual submission ID from Zapier
+                    document.getElementById('audit-id').textContent = data.id || 'LIA-' + Date.now();
+                    
+                    // Show submission details
+                    if (data.formData) {
+                        document.getElementById('lead-name').textContent = data.formData.name || 'Niet opgegeven';
+                        document.getElementById('linkedin-url').textContent = data.formData.linkedin_url || 'Niet opgegeven';
+                        document.getElementById('submission-details').style.display = 'block';
+                    }
+                    
+                    // Clear session storage
+                    sessionStorage.removeItem('leadSubmission');
+                    
+                } catch (error) {
+                    console.error('Error parsing submission data:', error);
+                    // Fallback audit ID
+                    document.getElementById('audit-id').textContent = 'LIA-' + Date.now();
+                }
+            } else {
+                // Fallback if no session data (direct access to success page)
+                document.getElementById('audit-id').textContent = 'LIA-' + Date.now();
+            }
         });
     </script>
 </body>
