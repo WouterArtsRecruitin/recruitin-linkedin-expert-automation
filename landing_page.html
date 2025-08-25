@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Expert | Recruitin - Transformeer Jouw Carrière</title>
+    <meta name="description" content="Domineer LinkedIn in de Nederlandse tech markt. 300% meer profiel views, 5-10 nieuwe connecties/week. Gratis audit + 30-dagen geld terug garantie.">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .cta-button {
+            background: #ff6b6b;
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 10px;
+        }
+        
+        .cta-button:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .result-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .result-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .pricing-card.featured {
+            transform: scale(1.05);
+            border: 3px solid #667eea;
+        }
+        
+        .pricing-card.featured::before {
+            content: "MEEST POPULAIR";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #667eea;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #667eea;
+            margin: 20px 0;
+        }
+        
+        .form-section {
+            background: #f8f9fa;
+        }
+        
+        .lead-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .trust-item {
+            text-align: center;
+        }
+        
+        .trust-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero .subtitle { font-size: 1.4rem; }
+            .pricing-card.featured { transform: none; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>🚀 LinkedIn Expert</h1>
+            <p class="subtitle">Domineer de Nederlandse Tech Markt</p>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">
+                300% meer profiel views • 5-10 nieuwe connecties/week • 25% hoger salaris potentieel
+            </p>
+            <a href="#audit-form" class="cta-button">🎯 Start Gratis LinkedIn Audit</a>
+        </div>
+    </div>
+    
+    <!-- Trust Indicators -->
+    <div class="container">
+        <div class="trust-indicators">
+            <div class="trust-item">
+                <div class="trust-number">20+</div>
+                <div>Jaar Expertise</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">500+</div>
+                <div>Engineers Geplaatst</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">2,500+</div>
+                <div>LinkedIn Volgers</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">95%</div>
+                <div>Tevredenheid</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Results Section -->
+    <div class="section">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">
+                🎯 Bewezen Resultaten
+            </h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 50px;">
+                Onze klanten zien gemiddeld deze verbeteringen binnen 30 dagen
+            </p>
+            
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">300%</div>
+                    <h3>Meer Profiel Views</h3>
+                    <p>Van gemiddeld 20 naar 80+ views per week</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">5-10</div>
+                    <h3>Nieuwe Connecties/Week</h3>
+                    <p>Kwaliteits netwerk groei met relevante professionals</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">2-3</div>
+                    <h3>Recruiter Benaderingen</h3>
+                    <p>Per maand zonder actief zoeken naar werk</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">25%</div>
+                    <h3>Hoger Salaris Potentieel</h3>
+                    <p>Door verhoogde zichtbaarheid en positionering</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pricing Section -->
+    <div class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px;">
+                💎 LinkedIn Expert Pakketten
+            </h2>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Foundation</h3>
+                    <div class="price">€295</div>
+                    <p style="margin-bottom: 30px;">Eenmalige LinkedIn optimalisatie</p>
+                    <ul style="text-align: left; margin-bottom: 30px;">
+                        <li>✅ Complete profiel audit</li>
+                        <li>✅ Header & About optimalisatie</li>
+                        <li>✅ Experience sectie herschrijven</li>
+                        <li>✅ Skills & endorsements strategie</li>
+                        <li>✅ 30-dagen follow-up support</li>
+                    </ul>
+                    <a href="#audit-form" class="cta-button">Kies Foundation</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <h3>Authority Builder</h3>
+                    <div class="price">€147<span style="font-size: 1rem;">/maand</span></div>
+                    <p style="margin-bottom: 30px;">Doorlopende content + optimalisatie</p>
+                    <ul style="text-align: left; margin-bottom: 30px;">
+                        <li>✅ Alles van Foundation</li>
+                        <li>✅ 3x per week content planning</li>
+                        <li>✅ Maandelijkse performance review</li>
+                        <li>✅ Network groei strategie</li>
+                        <li>✅ Engagement optimalisatie</li>
+                        <li>✅ Priority WhatsApp support</li>
+                    </ul>
+                    <a href="#audit-form" class="cta-button">Kies Authority Builder</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Premium</h3>
+                    <div class="price">€495</div>
+                    <p style="margin-bottom: 30px;">Complete LinkedIn transformatie</p>
+                    <ul style="text-align: left; margin-bottom: 30px;">
+                        <li>✅ Alles van Foundation</li>
+                        <li>✅ 6 maanden Authority Builder</li>
+                        <li>✅ Personal branding workshop</li>
+                        <li>✅ Recruiter outreach templates</li>
+                        <li>✅ Salary negotiation guidance</li>
+                        <li>✅ 1-op-1 strategy sessies</li>
+                    </ul>
+                    <a href="#audit-form" class="cta-button">Kies Premium</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Lead Form -->
+    <div class="section form-section" id="audit-form">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">
+                🎯 Start Jouw Gratis LinkedIn Audit
+            </h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 50px;">
+                Ontdek binnen 24 uur exact hoe je LinkedIn profiel scoort en wat je kunt verbeteren
+            </p>
+            
+            <form class="lead-form" action="https://hooks.zapier.com/hooks/catch/123456/linkedin-lead/" method="POST">
+                <div class="form-group">
+                    <label for="name">Volledige Naam *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Adres *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="linkedin_url">LinkedIn Profiel URL *</label>
+                    <input type="url" id="linkedin_url" name="linkedin_url" placeholder="https://linkedin.com/in/jouwprofiel" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="experience_level">Experience Level *</label>
+                    <select id="experience_level" name="experience_level" required>
+                        <option value="">Selecteer je level</option>
+                        <option value="Junior">Junior (0-2 jaar)</option>
+                        <option value="Medior">Medior (3-5 jaar)</option>
+                        <option value="Senior">Senior (6-10 jaar)</option>
+                        <option value="Lead">Lead (10+ jaar)</option>
+                        <option value="Manager">Manager/Director</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tech_stack">Huidige Tech Stack</label>
+                    <input type="text" id="tech_stack" name="tech_stack" placeholder="Bijv: React, Node.js, Python, AWS">
+                </div>
+                
+                <div class="form-group">
+                    <label for="challenge">Grootste LinkedIn Uitdaging</label>
+                    <textarea id="challenge" name="challenge" rows="3" placeholder="Wat is je grootste uitdaging op LinkedIn?"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="package">Interesse in Pakket</label>
+                    <select id="package" name="package">
+                        <option value="">Nog niet zeker</option>
+                        <option value="foundation">Foundation (€295)</option>
+                        <option value="authority">Authority Builder (€147/maand)</option>
+                        <option value="premium">Premium (€495)</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="cta-button" style="width: 100%; margin: 30px 0 0 0;">
+                    🚀 Start Mijn Gratis LinkedIn Audit
+                </button>
+                
+                <p style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 20px;">
+                    ✅ 100% Gratis • ✅ Geen verplichtingen • ✅ Resultaat binnen 24 uur
+                </p>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer style="background: #333; color: white; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <h3>Recruitin LinkedIn Expert</h3>
+            <p>20+ jaar expertise in Nederlandse tech recruitment</p>
+            <p>Email: <a href="mailto:info@recruitin.nl" style="color: #667eea;">info@recruitin.nl</a></p>
+            <p style="margin-top: 20px; font-size: 0.9rem; color: #999;">
+                © 2025 Recruitin BV. Alle rechten voorbehouden.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Analytics & Tracking -->
+    <script>
+        // Form submission tracking
+        document.querySelector('.lead-form').addEventListener('submit', function(e) {
+            console.log('LinkedIn Expert form submitted');
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
