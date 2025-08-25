@@ -1,0 +1,4 @@
+Timestamp,Lead ID,Name,Email,LinkedIn URL,Experience Level,Tech Stack,Challenge,Package Interest,Lead Score,Status,Follow-up Date,Revenue Potential,Notes,Converted
+2025-01-25 10:30:00,LIA-20250125-001,Jan de Vries,jan@techcompany.nl,https://linkedin.com/in/jandevries,Senior,"React, Node.js, AWS",Te weinig views en connecties,authority,85,New,2025-01-26,€147/maand,Hot lead - immediate follow-up,FALSE
+2025-01-25 11:15:00,LIA-20250125-002,Sarah Bakker,sarah@startup.nl,https://linkedin.com/in/sarahbakker,Medior,"Python, Django, PostgreSQL",Geen recruiter interesse,foundation,70,New,2025-01-26,€295,Good technical profile,FALSE
+2025-01-25 14:22:00,LIA-20250125-003,Mike van der Berg,mike@bigcorp.com,https://linkedin.com/in/mikevanderberg,Lead,"Java, Spring, Kubernetes",Wil meer zichtbaarheid,premium,100,Contacted,2025-01-27,€495,Enterprise contact - high value,FALSE
