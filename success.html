@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedankt! LinkedIn Audit wordt verwerkt | Recruitin</title>
+    <meta name="description" content="Jouw LinkedIn audit aanvraag is ontvangen. We nemen binnen 24 uur contact met je op.">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .success-container {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 600px;
+            margin: 20px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        .success-icon {
+            font-size: 80px;
+            margin-bottom: 30px;
+        }
+        
+        .success-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 20px;
+        }
+        
+        .success-subtitle {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+        
+        .next-steps {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .next-steps h3 {
+            color: #667eea;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+        
+        .steps-list {
+            text-align: left;
+            font-size: 1rem;
+            color: #4a5568;
+        }
+        
+        .steps-list li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .contact-info {
+            background: #667eea;
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+        
+        .contact-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .success-container {
+                padding: 40px 20px;
+                margin: 10px;
+            }
+            
+            .success-title {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="success-container">
+        <div class="success-icon">🎯</div>
+        
+        <h1 class="success-title">Geweldig!</h1>
+        <p class="success-subtitle">
+            Jouw LinkedIn audit aanvraag is succesvol ontvangen.<br>
+            We gaan meteen aan de slag met jouw profiel analyse!
+        </p>
+        
+        <div class="next-steps">
+            <h3>📋 Wat gebeurt er nu?</h3>
+            <ul class="steps-list">
+                <li><strong>Binnen 2 uur:</strong> We analyseren jouw LinkedIn profiel volledig</li>
+                <li><strong>Binnen 24 uur:</strong> Je ontvangt jouw persoonlijke audit rapport</li>
+                <li><strong>Deze week:</strong> Optioneel gratis adviesgesprek (15 min)</li>
+                <li><strong>Direct daarna:</strong> Start met optimalisatie van jouw profiel</li>
+            </ul>
+        </div>
+        
+        <div class="cta-buttons">
+            <a href="https://calendly.com/recruitin/linkedin-expert-consult" class="btn btn-primary">
+                📅 Plan Direct een Gesprek
+            </a>
+            <a href="/landing_page.html" class="btn btn-secondary">
+                ← Terug naar Hoofdpagina
+            </a>
+        </div>
+        
+        <div class="contact-info">
+            <h4>📞 Vragen? Direct contact:</h4>
+            <p>
+                <strong>WhatsApp:</strong> +31 6 14314593<br>
+                <strong>Email:</strong> info@recruitin.nl<br>
+                <strong>Response tijd:</strong> Binnen 2 uur (werkdagen)
+            </p>
+        </div>
+        
+        <div style="margin-top: 30px; font-size: 0.9rem; color: #666;">
+            <p>✅ Jouw gegevens zijn veilig opgeslagen conform AVG wetgeving</p>
+            <p>🎯 Audit ID: <code id="audit-id">LIA-$(date +%Y%m%d)-$(date +%H%M%S)</code></p>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Generate unique audit ID
+            const auditId = 'LIA-' + new Date().toISOString().slice(0,10).replace(/-/g,'') + '-' + new Date().toTimeString().slice(0,5).replace(/:/g,'');
+            document.getElementById('audit-id').textContent = auditId;
+        });
+    </script>
+</body>
+</html>
